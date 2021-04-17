@@ -8,66 +8,61 @@ import java.util.Map;
  * @Date 2021/3/25 18:40
  * @Version 1.0
  */
+
+/**查找环的入口节点
+ * 1.通过快慢指针来找出相遇点，如果相遇点为空 则返回null；
+ * 2.通过画图可知和方程可知相遇点到入口节点的距离和头部节点到入口节点的距离是相等的
+ */
 public class detectcycle {
 
-    static class Node{
+    static class ListNode{
         int value;
-        Node next;
+        ListNode next;
 
-        public Node(int value) {
+        public ListNode(int value) {
             this.value = value;
             this.next = null;
         }
     }
 
-    public Node detectCycle(Node node) {
-        if (! isCycle(node)) {
-            return null;
-        }
+    public ListNode detectCycle(ListNode head) {
+        if (head == null) {return null;}
 
-        Map<Node,Integer> node_count = new HashMap<Node,Integer>();
-        node_count.put(node,1);
-        while (node_count.get(node) <= 1) {
-            node_count.put(node,node_count.get(node)+1);
-            node = node.next;
-        }
+        ListNode fast = head;
+        ListNode low = head;
 
-        return node.next;
-
-    }
-
-    public boolean isCycle(Node node) {
-        Node fast = node;
-        Node low = node;
-
-        while (fast.next != null && fast.next.next != null) {
+        while (fast != null && fast.next != null) {
             fast = fast.next.next;
             low = low.next;
 
-            if (fast == low) {
-                return true;
-            }
+            if (low == fast) {break;}
         }
+        if (low == null) return null;
+        fast = head;
 
-        return false;
+        while (low != fast) {
+            fast = fast.next;
+            low = low.next;
+        }
+        return low;
     }
 
     public static void main(String[] args) {
         detectcycle detectcycle = new detectcycle();
 
-        Node node1 = new Node(1);
-        Node node2 = new Node(2);
-        Node node3 = new Node(3);
-        Node node4 = new Node(2);
-        Node node5 = new Node(1);
+        ListNode node1 = new ListNode(1);
+        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(3);
+        ListNode node4 = new ListNode(2);
+        ListNode node5 = new ListNode(1);
         //Node node6 = new Node(5);
 
         node1.next = node2;
         node2.next = node3;
         node3.next = node4;
         node4.next = node5;
-        node5.next = node3;
+        node5.next = node2;
 
-        detectcycle.detectCycle(node1);
+        System.out.println(detectcycle.detectCycle(node1).value);
     }
 }
