@@ -141,7 +141,7 @@ public class isPalindrome {
         Node node3 = new Node(3);
         Node node4 = new Node(2);
         Node node5 = new Node(1);
-        //Node node6 = new Node(5);
+        //algorithm.listnode.Node node6 = new algorithm.listnode.Node(5);
 
         node1.next = node2;
         node2.next = node3;
