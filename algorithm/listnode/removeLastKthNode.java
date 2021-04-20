@@ -12,7 +12,7 @@ package algorithm.listnode;
 public class removeLastKthNode {
 
 	//单项链表
-	public Node reMoveLastKthNode(Node head,int k) {
+	public Node reMoveLastKthNode(Node head,int  k) {
 		if (head == null || k < 1) {
 			return head;
 		}
@@ -73,6 +73,34 @@ public class removeLastKthNode {
 
 		return head;
 	}
+	//可以通过快指针先走K步 慢指针先指向head，导致 快指针和慢指针相差K个结点，然后快指针移到末尾 这个时候慢指针就是倒数第K个结点了。
+	//然后在遍历的时候 记录下慢指针的前一个结点，用来删除就OK了。
+
+	public Node reMoveLastKthNode02(Node head,int k) {
+		if (head == null || k < 1) {
+			return head;
+		}
+		Node fast = head;
+		Node low = head;
+		int i = 0;
+		while (k > 0) {
+			if (fast != null) {
+				fast = fast.next;
+			}else {
+				return head;
+			}
+			k--;
+		}
+		if (fast == null ) {return head.next;}
+		while (fast.next != null) {
+			fast = fast.next;
+			low = low.next;
+		}
+
+		low.next = low.next.next;
+
+		return head;
+	}
 
 	public static void main(String[] args) {
 		Node n4 = new Node(4,null);
@@ -100,7 +128,7 @@ public class removeLastKthNode {
 //		}
 
 
-		Dnode resul = removeLastKthNode.reMoveLastKthNode01(nn1,1);
+		Node resul = removeLastKthNode.reMoveLastKthNode02(n1,5);
 
 		while (resul != null) {
 			System.out.println(resul.value);

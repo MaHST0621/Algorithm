@@ -15,7 +15,8 @@ public class fibo {
 
 	int getFiBo(int n) {
 		int f = 0,g = 1;
-		while (0 < n--) {
+		if (n == 0) {return 0;}
+		while (0 < --n) {
 			g = f + g;
 			f = g - f;
 		}
