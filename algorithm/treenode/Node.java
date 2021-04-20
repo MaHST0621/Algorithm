@@ -13,4 +13,9 @@ public class Node {
 	public Node(int data) {
 		this.value = data;
 	}
+
+	public void setKid(Node left, Node right) {
+		this.left = left;
+		this.right = right;
+	}
 }

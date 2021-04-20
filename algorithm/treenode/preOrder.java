@@ -8,4 +8,13 @@ package algorithm.treenode;
 //先序遍历
 public class preOrder {
 
+	public void preOrderRecur(Node head) {
+		if (head == null) {
+			return;
+		}
+
+		System.out.println(head.value + " ");
+		preOrderRecur(head.left);
+		preOrderRecur(head.right);
+	}
 }
