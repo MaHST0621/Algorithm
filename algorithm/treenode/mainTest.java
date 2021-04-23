@@ -37,7 +37,7 @@ public class mainTest {
 		n6.setKid(n12,n13);
 		n7.setKid(n14,n15);
 
-		posOrder.posOrderRecur02(n1);
+		inOrder.masterOder(n1);
 
 	}
 }
