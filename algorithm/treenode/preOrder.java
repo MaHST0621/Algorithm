@@ -1,5 +1,7 @@
 package algorithm.treenode;
 
+import java.util.Stack;
+
 /**
  * @Author Mahe
  * @Date 2021/4/20 10:09
@@ -8,13 +10,31 @@ package algorithm.treenode;
 //先序遍历
 public class preOrder {
 
-	public void preOrderRecur(Node head) {
+	private Stack<Node> stack = new Stack<Node>();
+	//递归
+	public void preOrderRecur01(Node head) {
 		if (head == null) {
 			return;
 		}
 
 		System.out.println(head.value + " ");
-		preOrderRecur(head.left);
-		preOrderRecur(head.right);
+		preOrderRecur01(head.left);
+		preOrderRecur01(head.right);
+	}
+
+	//非递归
+	public void preOrderRecur02(Node head) {
+		if (head == null) {
+			return;
+		}
+
+		stack.push(head);
+		Node cur = null;
+		while (!stack.isEmpty()) {
+			cur = stack.pop();
+			System.out.println(cur.value + " ");
+			if (cur.right != null) {stack.push(cur.right);}
+			if (cur.left != null) {stack.push(cur.left);}
+		}
 	}
 }
