@@ -11,6 +11,7 @@ public class mainTest {
 		inOrder inOrder = new inOrder();
 		posOrder posOrder = new posOrder();
 		preOrder preOrder = new preOrder();
+		levelOrder levelOrder = new levelOrder();
 
 		Node n1 = new Node(1);
 		Node n2 = new Node(2);
@@ -37,7 +38,7 @@ public class mainTest {
 		n6.setKid(n12,n13);
 		n7.setKid(n14,n15);
 
-		inOrder.masterOder(n1);
+		levelOrder.levelorder(n1);
 
 	}
 }
