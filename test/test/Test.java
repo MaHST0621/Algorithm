@@ -1,10 +1,7 @@
 package test;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class Test {
 
@@ -40,10 +37,6 @@ public class Test {
     }
 
     public static void main(String[] args) throws InstantiationException, IllegalAccessException {
-        ArrayList<Integer> list = new ArrayList<>(15);
-        list.add(15);
-        list.add(5);
-        list.add(1,8);
-        list.add(1,20);
+        HashMap<Object, Object> hashMap = new HashMap<>();
     }
 }
