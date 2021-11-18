@@ -1,4 +1,4 @@
-package Thread;
+package Thread_PV;
 
 public class Cunsumer implements Runnable{
     private Resourece resourece;
@@ -11,7 +11,12 @@ public class Cunsumer implements Runnable{
     @Override
     public void run() {
         while (true) {
-            resourece.remove();
+            try {
+                Thread.sleep(3000);
+                resourece.remove();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

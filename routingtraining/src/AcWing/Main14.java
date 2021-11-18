@@ -1,7 +1,6 @@
 package AcWing;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * 移动元素
@@ -14,32 +13,62 @@ public class Main14 {
             int n = scanner.nextInt();
             int[] num = new int[n];
             int sum = 0;
+            int cur = 0; //计算数组前缀和
+            boolean cheak = false;
 
             for (int i = 0; i < n; i++) {
                 num[i] = scanner.nextInt();
                 sum += num[i];
             }
 
-            Arrays.sort(num);
+            Set<Integer> set = new HashSet<>();
+            //正序遍历数组
+            for (int i = 0; i < n; i++) {
+                cur += num[i];
+                set.add(num[i]);
 
-            if (sum % 2 == 0) {
-                int x = sum >> 1;
-                int k = 0;
-                for (int i = 0; i < n; i++) {
-                    if (num[i] > x) {
-                        System.out.println("No");
+                if (cur == sum - cur) {
+                    cheak = true;
+                    break;
+                }
+
+                if (cur > sum - cur) {
+                    int x = cur - (sum >> 1);
+                    if (set.contains(x)) {
+                        cheak = true;
                         break;
                     }
-                    if (num[i] == x) {
+                }
+            }
+            if (cheak == true) {
+                System.out.println("YES");
+                break;
+            }
+
+            //逆序化数组并遍历
+            Collections.reverse(Collections.singletonList(num));
+            for (int i = 0; i < n; i++) {
+                cur += num[i];
+                set.add(num[i]);
+
+                if (cur == sum - cur) {
+                    System.out.println("YES");
+                    break;
+                }
+
+                if (cur > sum - cur) {
+                    int x = cur - sum >> 1;
+                    if (set.contains(x)) {
                         System.out.println("YES");
                         break;
                     }
-                    k += num[i];
                 }
-            }else {
-                System.out.println("No");
             }
-
+            if (cheak == true) {
+                System.out.println("YES");
+                break;
+            }
+            System.out.println("No");
         }
     }
 }

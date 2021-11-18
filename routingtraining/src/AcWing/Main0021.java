@@ -16,12 +16,6 @@ public class Main0021 {
                 map.put(q[i],i);
             }
 
-            Collections.sort(map, new Comparator<Map.Entry<String, Integer>>() {
-                @Override
-                public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
-                    return o2.getValue().compareTo(o1.getValue());
-                }
-            });
         }
     }
 }
