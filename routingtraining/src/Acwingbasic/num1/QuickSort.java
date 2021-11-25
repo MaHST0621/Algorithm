@@ -22,8 +22,8 @@ public class QuickSort {
         int j = r + 1;
 
         while (i < j) {
-            do ++i ;while(q[i] < x);
-            do --j ;while(q[j] > x);
+            do i++ ;while(q[i] < x);
+            do j-- ;while(q[j] > x);
             if (i < j) {
                 int smp = q[i];
                 q[i] = q[j];
