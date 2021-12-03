@@ -55,7 +55,7 @@ public class detectcycle {
         ListNode node3 = new ListNode(3);
         ListNode node4 = new ListNode(2);
         ListNode node5 = new ListNode(1);
-        //algorithm.listnode.Node node6 = new algorithm.listnode.Node(5);
+        //algorithm.algorithm.listnode.Node node6 = new algorithm.algorithm.listnode.Node(5);
 
         node1.next = node2;
         node2.next = node3;

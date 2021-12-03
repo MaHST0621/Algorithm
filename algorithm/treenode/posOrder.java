@@ -1,4 +1,4 @@
-package algorithm.treenode;
+package treenode;
 
 import java.util.Stack;
 

@@ -54,7 +54,7 @@ public class mergeTwoList {
         Node node3 = new Node(6);
         Node node4 = new Node(2);
         Node node5 = new Node(3);
-        //algorithm.listnode.Node node6 = new algorithm.listnode.Node(5);
+        //algorithm.algorithm.listnode.Node node6 = new algorithm.algorithm.listnode.Node(5);
 
         node1.next = node2;
         node2.next = node3;

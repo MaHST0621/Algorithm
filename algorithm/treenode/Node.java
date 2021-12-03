@@ -1,4 +1,4 @@
-package algorithm.treenode;
+package treenode;
 
 /**
  * @Author Mahe

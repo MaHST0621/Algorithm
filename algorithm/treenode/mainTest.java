@@ -1,4 +1,4 @@
-package algorithm.treenode;
+package treenode;
 
 /**
  * @Author Mahe
@@ -9,8 +9,8 @@ public class mainTest {
 
 	public static void main(String[] args) {
 		inOrder inOrder = new inOrder();
-		posOrder posOrder = new posOrder();
-		preOrder preOrder = new preOrder();
+		treenode.posOrder posOrder = new posOrder();
+		treenode.preOrder preOrder = new preOrder();
 		levelOrder levelOrder = new levelOrder();
 
 		Node n1 = new Node(1);

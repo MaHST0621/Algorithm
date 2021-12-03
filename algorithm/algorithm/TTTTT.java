@@ -1,3 +1,5 @@
+package algorithm;
+
 public class TTTTT {
     public static void main(String[] args) {
         Integer a = 500;
