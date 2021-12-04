@@ -1,5 +1,7 @@
 package treenode;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -9,6 +11,7 @@ import java.util.Stack;
  */
 //中序遍历
 public class inOrder {
+	List<String> list = new ArrayList<>();
 
 	private Stack<Node> stack = new Stack<Node>();
 	//递归
