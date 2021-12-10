@@ -22,6 +22,7 @@ public class Day01 {
             tq[i] = new TreeNode(i);
         }
         System.out.println();
+        return null;
     }
 
     private void dfs(TreeNode[] tq , int n ,TreeNode head) {
