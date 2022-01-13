@@ -3,6 +3,9 @@ package Thread_Method;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * 会让出CPU，但不会释放锁
+ */
 public class ThreadYield {
     private static HashMap<String, AtomicInteger> map = new HashMap<>();
     private static int MAX_TURN = 500;
