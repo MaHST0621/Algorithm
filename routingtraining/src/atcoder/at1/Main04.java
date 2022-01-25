@@ -1,4 +1,4 @@
-package atcoder;
+package atcoder.at1;
 
 import java.util.Scanner;
 
