@@ -1,6 +1,7 @@
 package Executers;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -8,6 +9,13 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 只要有异步任务提交进来就会创建一个线程来执行，可以创建无限个线程
  * 弊端： 因为可以创建无数个线程，所以容易耗尽系统资源
  * 使用场景： 用来 快速处理突发性的高异步任务提交场景，短时间处理异步任务
+ * new ThreadPoolExecutor(
+ *                    0,
+ *                    Integer.MAX_VALUE,
+ *                    60L,
+ *                    TIME,
+ *                    new SynchronousQueue<>() //同步队列，没有容量
+ *                    )
  */
 public class ExecutersCreateDemo3 {
     private static  int MAX_TURN = 5;

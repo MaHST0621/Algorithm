@@ -5,8 +5,15 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * ExecutorService pool = Executors.newFixedThreadPool(int count);
+ *  * new ThreadPoolExecutor(
+ *  *                    count,
+ *  *                    count,
+ *  *                    0L,
+ *  *                    TIME,
+ *  *                    new ArrayBlockingQueue<>()
+ *  *                    )
  * 创建一个包含 count 线程的线程池
- * 如果线程池可用线程繁忙时，异步任务都在阻塞队列等待
+ * 如果线程池可用线程繁忙时，异步任务都在阻塞队列等待,容易OOM
  * 弊端： 阻塞队列长度是无限的，容易耗尽系统资源
  * 适用场景： 因为线程池能够稳定的提供线程来执行任务，因此适合CPU密集型任务场景处理（任务长时间执行），避免线程的回收和分配
  */

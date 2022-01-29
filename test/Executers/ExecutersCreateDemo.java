@@ -5,8 +5,17 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Executors.newSingleThreadExecutor()
+ *  * new AnotherClass( new ThreadPoolExecutor(
+ *  *                    1,
+ *  *                    1,
+ *  *                    0L,
+ *  *                    TIME,
+ *  *                    new SynchronousQueue<>()
+ *  *                    )
+ *  *   )
  * 创建一个只包含一个线程的线程池
  * 所有的异步任务都是顺序执行的
+ * 该方法时Executors.newFixedThreadExecutor(1),并用某一类来进行包装，防止coreThreadCount被更改
  * 弊端： 阻塞队列长度是无限的，容易耗尽系统资源
  */
 public class ExecutersCreateDemo {
