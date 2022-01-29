@@ -2,7 +2,7 @@ package sorts;
 
 public class QuickSoert {
     static void quick_sort(int i,int j,int[] nums) {
-        if (i >= j) return;
+        if (i >= j) {return;}
         int x = nums[i];
         int le = i - 1 , ri = j + 1;
 
@@ -25,6 +25,6 @@ public class QuickSoert {
         int[] nums = new int[]{7,8,1,2,6,5};
         quick_sort(0,nums.length - 1,nums);
 
-        for (int i : nums) System.out.println(i);
+        for (int i : nums) {System.out.println(i);}
     }
 }
